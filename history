@@ -1,0 +1,37 @@
+Apr 8, 2004
+
+No need to set 'ro' when visiting the opted .txt files.  Setting 'ma' is
+enough.  
+
+Mar 26, 2004
+
+Let default value of g:opted_dir be ~/v003, which is a reasonable value
+-- assuming the user unpacks the OPTED zip file, v003.zip, in their home
+directory.
+
+May 22, 2003
+
+opted.vim is now a plugin.  Takes care of
+building the .txt and tags files.  Requires 
+one global variable, g:opted_dir, to record 
+the location of the OPTED directory.
+
+Nov 28, 2002
+
+Make the text-file generator a Vim script
+opted2vimhelp.vim, so there is no OS dependence.
+
+v 1a
+
+Nov 26-27, 2002
+
+Convert to Vim help files and use tags to search.
+Relying on completion is easier than having 
+to specify regexps.
+
+Script opted2vimhelp converts the .html OPTED
+to Vim help files (plus tags).
+
+Oct 31, 2000
+
+released

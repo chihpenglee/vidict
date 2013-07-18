@@ -1,0 +1,4 @@
+  You have opened the Online Plain Text English Dictionary (OPTED).
+  Use Vim tag commands (:help tag) to search for headwords in this window.
+  For example,     :tj lexicon
+            or     :tj /lexicon

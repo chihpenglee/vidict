@@ -1,0 +1,99 @@
+\input tex2page
+\input btxmac
+
+% Last modified 2004-03-26 
+
+\title{{\tt\bf opted.vim}, 
+a Vim plugin for consulting
+Webster's Unabridged Dictionary (1913)}
+
+\smallskip
+
+\centerline{\urlh{../index.http}{Dorai Sitaram}}
+\centerline{\urlh{vidict.tar.gz}{Download}}
+
+\bigskip
+
+The Online Plain Text English Dictionary, or
+OPTED~\cite{opted}, can be consulted from the text
+editor Vim~\cite{vim} quite easily.  The OPTED is a
+public-domain dictionary based on the etext compiled by
+Project Gutenberg~\cite{projgutenberg} from the
+1913 version of Webster's Unabridged Dictionary.  It
+has about 180,000 entries.
+
+\subsection*{Installation}
+
+Download the
+\urlh{http://www.mso.anu.edu.au/~ralph/OPTED/v003.zip}{zip
+file}
+from the OPTED website and unzip
+it.  (Use \p{unzip -aa} or other means to ensure that the text files
+contain the correct newline format for your machine.)
+This produces a directory \p{v003} containing many HTML
+files.  Since \p{v003} is not a distinctive name, you
+may want to rename the directory.  We will refer
+to this directory as the OPTED directory, whatever its
+actual name.
+
+Put the file \p{opted.vim} in one of your Vim
+\p{plugin} directories, e.g., \p{~/.vim/plugin}.
+In your \p{.vimrc} or in a plugin file, let the global
+variable \p{g:opted_dir} contain 
+the
+location of the OPTED directory, e.g.,
+
+\p{
+let g:opted_dir = '/home/ds26/opted/v003'
+}
+
+If you don't explicitly set \p{g:opted_dir} yourself, it will be assumed
+to be \p{~/v003}.  I.e., the plugin will assume that you unpacked the
+OPTED zip file in your home directory and didn't rename it. 
+
+\subsection*{Usage}
+
+From Vim, you may now use the command \p{gm} to open up 
+a small (5-line) Vim window into the OPTED.
+
+The OPTED window as seen in Vim is the result of
+massaging the original OPTED files into Vim-suitable
+\p{.txt} and \p{tags} files.  This massaging is a
+time-consuming process, but it need be done only once,
+and thus happens only the first time
+\p{gm} is called.
+(To avoid an unseemly delay when 
+you try to consult the dictionary for the very first time
+from Vim, you could pre-build the \p{.txt} and \p{tags}
+files by calling \p{vim -c "norm gm" -c q} from your
+operating system's
+command line.)
+
+Once in the OPTED window, you may use any of Vim's
+several tags commands to specify a dictionary headword
+as a tag.  E.g.,
+\p{
+:tj lexicon
+}
+
+or
+
+\p{
+:tj /lexicon
+}
+
+The Vim command \p{:help tags} shows you the various
+ways to do tag search in Vim.  Vim allows both
+completion and regular expressions on tags, so you don't have to
+have the spelling down pat.  Jumping to the tag
+will show the definition of the headword.  You can also
+browse around the thus-obtained definition using normal
+Vim navigation commands.
+
+\subsection*{References}
+
+\bibliographystyle{plain}
+\bibliography{../tex2page/bigbib}
+
+\bye
+
